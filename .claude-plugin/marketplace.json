@@ -1,0 +1,5 @@
+{
+  "name": "claude-status-vitals",
+  "owner": { "name": "DMasterIO" },
+  "plugins": [{ "name": "status-vitals", "source": "./" }]
+}

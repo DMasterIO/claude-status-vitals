@@ -1,0 +1,14 @@
+{
+  "name": "status-vitals",
+  "version": "0.5.0",
+  "description": "Status line with account, branch (worktree aware), session cost, 5h/weekly quota bars with reset countdown, context bar and a compaction hint.",
+  "userConfig": {
+    "compactAt": {
+      "type": "number",
+      "title": "Compact hint at (% of context)",
+      "description": "Context percentage where the compaction hint appears.",
+      "default": 60
+    }
+  },
+  "types": "./types/index.d.ts"
+}
