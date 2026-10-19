@@ -127,8 +127,10 @@ export const register: Register = (on, options) => {
   })
 
   on('ui.render', { component: 'AbovePrompt' }, async ($, e, next) => {
+    // Draw what the plugins beneath draw (e.g. clean-view's checklist) and stack the vitals below it, next to the prompt.
+    const base = await next(e)
     const v = await read($, vitalsAtom)
-    if (e.props.hasSurvey || v === null) return next(e)
+    if (e.props.hasSurvey || v === null) return base
 
     const { Box, Text } = $.ui.resolve(e)
     const meter = (m: NonNullable<Vitals['five']>) => (
@@ -142,6 +144,7 @@ export const register: Register = (on, options) => {
 
     return (
       <Box flexDirection="column">
+        {base}
         <Box>
           {v.account ? <Text color="cyan">{v.account}</Text> : null}
           {v.repo ? <Text dimColor>{`  `}</Text> : null}

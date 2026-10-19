@@ -1,6 +1,6 @@
 {
   "name": "status-vitals",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "description": "Status line with account, branch (worktree aware), session cost, 5h/weekly quota bars with reset countdown, context bar and a compaction hint.",
   "userConfig": {
     "compactAt": {
